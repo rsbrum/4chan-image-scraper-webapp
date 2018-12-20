@@ -1,0 +1,41 @@
+<div  id="container-layout" style="height: 100%; width: 100%; display:flex; flex-direction: column;">
+    <div  class="shadow" style="z-index: 1; flex: 1; width:100%;">
+      <mat-toolbar id="toolbar"  class="shadow justify-content-center row m-0 d-flex" >
+        <div class="col-3 ">
+            <img src="../../assets/logo.png" style="height: 50px; width:50px;">
+            <span class="ml-4 font-weight-bold">4chan Image Scraper </span>
+        </div>
+      </mat-toolbar>
+    </div>
+
+    <div class="container-fluid">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!-- 
+  <div  id="container-layout" style="height: 100%; width: 100%; display:flex; flex-direction: column;">
+    <div  class="shadow" style="z-index: 1; flex: 1; width:100%;">
+      <mat-toolbar id="toolbar"  class="shadow justify-content-center row m-0 d-flex" >
+        <div class="col-3 ">
+            <img src="../../assets/logo.png" style="height: 50px; width:50px;">
+            <span class="ml-4 font-weight-bold">4chan Image Scraper </span>
+        </div>
+      </mat-toolbar>
+    </div>
+
+
+    <div style=" flex: 14;">
+      <mat-drawer-container (window:resize)="onResize($event)" style="height: 100%;background: rgba(0,0,0,0.0)">
+
+      <mat-drawer style="width:240px;" #sidenav [mode]="mode">
+
+      </mat-drawer>
+
+      <mat-drawer-content class="container-fluid">
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+
+      </mat-drawer-container>
+    </div>
+  </div> -->
