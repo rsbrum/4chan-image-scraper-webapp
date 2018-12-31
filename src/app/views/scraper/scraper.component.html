@@ -1,21 +1,19 @@
-<div class="row justify-content-center">
-  <div class="col-8 mt-5 shadow" style="height: 500px; width: 500px; ">
+<div class="row justify-content-center h-75 d-flex align-self-center  mt-5 " >
+  <div class="col-sm-11 col-md-8 col-lg-8 col-11 mt-5 m-auto shadow" style="min-height: 90%;">
 
     <div class="row mt-5 text-center d-flex`">
       
-      <p class="m-auto font-weight-bold">Too many memes? No problem! Paste the link below and we will save your memes!</p>
+     <p class="m-auto font-weight-bold">Too many memes? No problem!</p>
     </div>
 
     <div class="row justify-content-center mt-4">
-      <div class="col-10">
+      <div class="col-12 col-sm-12 col-md-10 col-lg-10">
           <input #url style="border:none; width: 100%;" type="text" class="p-3 rounded-0" placeholder="ex: http://boards.4chan.org/pol/thread/196465287/ire-pol-england-sent-the-black-and-tans-now-they ">               
       </div>
   
     </div>
 
     <div class="row justify-content-center mt-4 d-flex">
-
-      
 
       <div *ngIf="!downloading">
         <button  (click)="download(url.value)"style="background: #436731; color: white;"class="m-auto p-3 btn rounded-0 font-weight-bold" type="button" id="button-addon2">Get Images</button>        
@@ -26,9 +24,7 @@
     </div>
 
     <div *ngIf="error"class="row mt-3">
-      <div  class="col-12 text-center font-weight-bold">
-          <p>Invalid URL!</p>
-      </div>
+          <p class="font-weight-bold shadow m-auto p-3" style="background: rgb(163, 34, 34);">Invalid URL!</p>
     </div>
   </div>
 </div>
