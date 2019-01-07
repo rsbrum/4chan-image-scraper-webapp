@@ -10,6 +10,7 @@ import {MatSnackBar} from '@angular/material';
 export class ScraperComponent implements OnInit {
 
   url: any;
+  a: any;
   downloading = false;
   error = false;
 
@@ -28,9 +29,10 @@ export class ScraperComponent implements OnInit {
       duration: 1000000,
       panelClass: ['snackbar']
     });
-    
+
     snackBarRef.afterDismissed().subscribe(() => {
-      window.open(this.url);
+      this.a.click();
+      window.URL.revokeObjectURL(this.url);
     });
   }
 
@@ -48,6 +50,11 @@ export class ScraperComponent implements OnInit {
     const blob = new Blob([data['_body']],  { type: 'application/zip' });
     this.url = window.URL.createObjectURL(blob);
     this.downloading = false;
+    this.a = document.createElement('a');
+    document.body.appendChild(this.a);
+    this.a.style = 'display: none';
+    this.a.href = this.url;
+    this.a.download = 'images.zip';
     this.openSnackBar('ZIP is ready', 'Download');
   }
 
