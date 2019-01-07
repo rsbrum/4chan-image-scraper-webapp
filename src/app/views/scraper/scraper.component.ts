@@ -9,9 +9,9 @@ import {MatSnackBar} from '@angular/material';
 })
 export class ScraperComponent implements OnInit {
 
-  url;
+  url: any;
   downloading = false;
-  error = false; 
+  error = false;
 
   constructor(
     private _scraper: ScraperService,
@@ -45,7 +45,7 @@ export class ScraperComponent implements OnInit {
   }
 
   downloadFile(data) {
-    const blob = new Blob([data],  { type: 'octet/stream' });
+    const blob = new Blob([data['_body']],  { type: 'application/zip' });
     this.url = window.URL.createObjectURL(blob);
     this.downloading = false;
     this.openSnackBar('ZIP is ready', 'Download');
