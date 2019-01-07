@@ -47,7 +47,7 @@ export class ScraperComponent implements OnInit {
   }
 
   downloadFile(data) {
-    const blob = new Blob([data['_body']],  { type: 'application/zip' });
+    const blob = new Blob([data],  { type: 'application/zip' });
     this.url = window.URL.createObjectURL(blob);
     this.downloading = false;
     this.a = document.createElement('a');
